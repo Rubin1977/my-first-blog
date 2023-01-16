@@ -1,5 +1,5 @@
 .page-header {
-    background-color: #477521;
+    background-color: #113ea0;
     margin-top: 0;
     margin-bottom: 40px;
     padding: 20px 20px 20px 40px;
@@ -51,7 +51,7 @@ h4 {
 
 .post h2 a,
 .post h2 a:visited {
-    color: #7da2a5;
+    color: #460f53;
 }
 
 .post > .date,
