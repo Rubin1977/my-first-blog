@@ -1,16 +1,16 @@
 .page-header {
-    background-color: #3069e4;
+    background-color: #347a7c;
     margin-top: 0;
-    margin-bottom: 70px;
-    padding: 20px 20px 20px 40px;
+    margin-bottom: 50px;
+    padding: 40px 40px 20px 40px;
 }
 
 .page-header h1,
 .page-header h1 a,
 .page-header h1 a:visited,
 .page-header h1 a:active {
-    color: #d4cccc;
-    font-size: 36pt;
+    color: #d84141;
+    font-size: 40pt;
     text-decoration: underline;
 }
 
@@ -18,11 +18,12 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: 'Loboto Mono'; cursive;
+    font-family: 'Loboto Mono'; 
+    font-stretch: 50%;
 }
 
 .date {
-    color: #beb63a;
+    color: #e9db17;
     font-size: 14pt;
     text-decoration: underline;
 
@@ -54,7 +55,7 @@ h4 {
 
 .post h2 a,
 .post h2 a:visited {
-    color: #000000;
+    color: #3022ac;
     text-decoration: unset;
 }
 
