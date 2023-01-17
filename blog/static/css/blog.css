@@ -1,8 +1,8 @@
 .page-header {
-    background-color: #347a7c;
+    background-color: #347a7cbe;
     margin-top: 0;
     margin-bottom: 50px;
-    padding: 40px 40px 20px 40px;
+    padding: 40px 40px 20px 30px;
 }
 
 .page-header h1,
@@ -10,14 +10,15 @@
 .page-header h1 a:visited,
 .page-header h1 a:active {
     color: #d84141;
-    font-size: 40pt;
-    text-decoration: underline;
+    font-size: 50pt;
+    text-decoration: unset;
 }
 
 h1,
 h2,
 h3,
 h4 {
+    color: #e9db17;
     font-family: 'Loboto Mono'; 
     font-stretch: 50%;
 }
@@ -48,14 +49,15 @@ h4 {
 }
 
 .post {
-    margin-left: 70px;
+    color: #460880d5;
+    margin-left: 35px;
     margin-right: 70px;
     margin-bottom: 70px;
 }
 
 .post h2 a,
 .post h2 a:visited {
-    color: #3022ac;
+    color: #084e11;
     text-decoration: unset;
 }
 
