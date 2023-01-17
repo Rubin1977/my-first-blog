@@ -18,7 +18,7 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: 'Loboto Mono';
+    font-family: 'Loboto Mono'; cursive;
 }
 
 .date {
@@ -54,7 +54,7 @@ h4 {
 
 .post h2 a,
 .post h2 a:visited {
-    color: #12a84b;
+    color: #000000;
     text-decoration: unset;
 }
 
