@@ -33,7 +33,7 @@ body{
 .date {
     color: #03202c;
     font-size: 11pt;
-    text-decoration: underline;
+    text-decoration: underline dotted;
 
 }
 
