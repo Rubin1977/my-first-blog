@@ -2,7 +2,7 @@
     background-color: #30578abe;
     margin-top: 20;
     margin-bottom: 50px;
-    border: 2px solid rgb(155, 57, 57);
+    border: 2px solid rgb(209, 94, 94);
     padding: 40px 40px 20px 30px;
 }
 
@@ -13,6 +13,9 @@
     color: #d84141;
     font-size: 50pt;
     text-decoration: unset;
+    background-color: #ffffff; 
+    margin: 10px, 20px, 20px, 30px;
+    padding: 10px 20px 25px 30px;
 }
 
 h1,
@@ -22,6 +25,11 @@ h4 {
     color: #e9db17;
     font-family: 'Loboto Mono'; 
     font-stretch: 50%;
+}
+article{
+    border: 2px solid rgb(155, 57, 57);
+    background-color: ivory;
+    padding: 13px;
 }
 
 body{
