@@ -22,7 +22,7 @@ h1,
 h2,
 h3,
 h4 {
-    color: #17e922;
+    color: #5c0d58;
     font-family: 'Loboto Mono'; 
     font-stretch: 50%;
 }
@@ -55,14 +55,16 @@ body{
 }
 
 .top-menu,
-.top-menu:hover,
 .top-menu:visited {
-    /* color: #ffffff; */
+    color: #ffffff; 
     float: right;
     font-size: 26pt;
     margin-right: 20px;
 }
 
+.top-menu:hover {
+    color: #2a1281;
+}
 .post {
     color: #260544d5;
     margin-left: 35px;
@@ -72,23 +74,24 @@ body{
 
 .post h2 a,
 .post h2 a:visited {
-    color: #12067c;
+    color: #2f067c;
     text-decoration: unset;
 }
 
 .post > .date,
 .post > .actions {
     float: right;
+    color: #2a1281;
 }
 
 .btn-secondary,
 .btn-secondary:visited {
-    color: #6b834c;
+    color: #b4b4cc;
     background: rgb(75, 110, 4);
     border-color: #492003;
 }
 
 .btn-secondary:hover {
-    color: #372088;
-    background-color: #7b8f77;
+    color: #2a1281;
+    background-color: #97aca8;
 }

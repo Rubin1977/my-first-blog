@@ -4,11 +4,11 @@
     <article class="post">
         <aside class="actions">
         {% if user.is_authenticated %}
-            <a class="btn btn-secondary" href="{% url 'post_edit' pk=post.pk %}">
+            <a class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Post edit" href="{% url 'post_edit' pk=post.pk %}">
                 {% include './icons/pencil-fill.svg' %}</a>
-            <a class="btn btn-secondary" href="{% url 'post_publish' pk=post.pk %}">
+            <a class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Post publish" href="{% url 'post_publish' pk=post.pk %}">
                 {% include './icons/plus-circle.svg' %}</a>
-            <a class="btn btn-secondary" href="{% url 'post_remove' pk=post.pk %}">
+            <a class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Post delete" href="{% url 'post_remove' pk=post.pk %}">
                 {% include './icons/trash-fill.svg' %}</a>
         {% endif %}
         </aside>
