@@ -21,7 +21,7 @@
                 {% include './icons/pencil-fill.svg' %}
             </a>
         {% endif %} 
-        <a class="btn btn-secondary" href="{% url 'add_comment_to_post' pk=post.pk %}">{% include './icons/pencil-fill.svg' %}Add comments</button></a>
+        <a class="btn btn-secondary" href="{% url 'add_comment_to_post' pk=post.pk %}">{% include './icons/pencil-fill.svg' %}Add comment</button></a>
         <hr>
         {% for comment in post.comments.all %}
             {% if user.is_authenticated or comment.approved_comment %}
@@ -29,7 +29,7 @@
                 <div class="date">
                     {{ comment.created_date }}
                     {% if not comment.approved_comment %}
-                        <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}">{% include './icons/trash-fill.svg' %}</a>
+                        <a class="btn btn-secondary" href="{% url 'comment_remove' pk=comment.pk %}">{% include './icons/trash-fill.svg' %}Delete comment</button></a>
                         <a class="btn btn-secondary" href="{% url 'comment_approve' pk=comment.pk %}">{% include './icons/pencil-square.svg' %}Aprove comment</button></a>
                     {% endif %}
                 </div>
