@@ -11,9 +11,8 @@
 .page-header h1 a:visited,
 .page-header h1 a:active {
     color: #d84141;
-    font-size: 50pt;
+    font-size: 55pt;
     text-decoration: unset;
-    /*background-color: #ffffff;*/ 
     margin: 0px;
     padding: 4px;
 }
@@ -23,7 +22,7 @@ h2,
 h3,
 h4 {
     color: #5c0d58;
-    font-family: 'Loboto Mono'; 
+    font-family: 'Lobster'; 
     font-stretch: 50%;
 }
 article{
@@ -35,7 +34,7 @@ article{
 body{
     margin: 22px;
     color: rgb(8, 4, 54);
-    background: rgb(132, 153, 92); 
+    background: rgb(95, 128, 89); 
     text-align: start;
 }
 .date {
@@ -63,7 +62,7 @@ body{
 }
 
 .top-menu:hover {
-    color: #2a1281;
+    color: #1e0b66;
 }
 .post {
     color: #260544d5;
@@ -86,17 +85,17 @@ body{
 
 .btn-secondary,
 .btn-secondary:visited {
-    color: #b4b4cc;
+    color: #cacad4;
     background: rgb(75, 110, 4);
     border-color: #492003;
 }
 
 .btn-secondary:hover {
     color: #2a1281;
-    background-color: #97aca8;
+    background-color: #aeb8b6;
 }
 
 .comment {
     margin: 20px 0px 20px 20px;
-    color: #d84141;
+    color: #1f1888;
 }
