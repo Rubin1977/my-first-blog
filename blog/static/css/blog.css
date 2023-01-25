@@ -2,7 +2,7 @@
     background-color: #30578abe;
     margin-top: 20;
     margin-bottom: 30px;
-    border: 2px solid rgb(2, 15, 59);
+    border: 3px solid rgb(2, 15, 59);
     padding: 0px;
 }
 
@@ -86,8 +86,8 @@ body{
 .btn-secondary,
 .btn-secondary:visited {
     color: #cacad4;
-    background: rgb(75, 110, 4);
-    border-color: #492003;
+    background: rgb(6, 97, 201);
+    border-color: #57504c;
 }
 
 .btn-secondary:hover {
