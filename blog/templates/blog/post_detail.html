@@ -21,6 +21,7 @@
         <h2>{{ post.title }}</h2>
         <p>{{ post.text|linebreaksbr }}</p>
         <a class="btn btn-secondary" href="{% url 'add_comment_to_post' pk=post.pk %}">{% include './icons/pencil-fill.svg' %}Add comment</button></a>
+        <hr>
         {% for comment in post.comments.all %}
             {% if user.is_authenticated or comment.approved_comment %}
             <div class="comment">
@@ -35,7 +36,8 @@
                 <p>{{ comment.text|linebreaks }}</p>
             </div>
             {% endif %}
-    {% empty %}
-        <p>No comments here yet :(</p>
-    {% endfor %}
+        {% empty %}
+            <p>No comments here yet :(</p>
+        {% endfor %}
+    </article>
 {% endblock %}

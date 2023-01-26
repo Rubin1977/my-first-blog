@@ -8,25 +8,23 @@
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-        <header class="page-header">
-            {% comment %} <div class="container"> {% endcomment %}
-                    {% if user.is_authenticated %}
-                        <a href="{% url 'post_new' %}" class="top-menu" data-toggle="tooltip" data-placement="left" title="New Post">{% include './icons/plus-square.svg' %}</a>
-                        <a href="{% url 'post_draft_list' %}" class="top-menu" data-toggle="tooltip" data-placement="top" title="Post draft list">{% include './icons/pencil-square.svg' %}</a>
-                        <p class="top-menu">Hello {{ user.username }}! <small>(<a href="{% url 'logout' %}">Odhlásenie</a>)</small></p> 
-                    {% else %} 
-                        <a href="{% url 'login' %}" class="top-menu" data-toggle="tooltip" data-placement="left" title="Login">{% include './icons/plus-square.svg' %}</a>
-                    {% endif %}
-                <h1><a href="/">Rubin (Django) Blog</a></h1>
-            {% comment %} </div> {% endcomment %}
-        </header>  
-        <main class="content container">
+        <div class="page-header">
+            {% if user.is_authenticated %}
+                <a href="{% url 'post_new' %}" class="top-menu" data-toggle="tooltip" data-placement="left" title="New Post">{% include './icons/plus-square.svg' %}</a>
+                <a href="{% url 'post_draft_list' %}" class="top-menu" data-toggle="tooltip" data-placement="left" title="Post draft list">{% include './icons/pencil-square.svg' %}</a>
+                <p class="top-menu">Hello {{ user.username }}! <small>(<a href="{% url 'logout' %}">Odhlásenie</a>)</small></p> 
+            {% else %} 
+                <a class="btn btn-primary " href="{% url 'login' %}" class="top-menu" data-toggle="tooltip" data-placement="left" title="Prihlásenie">Login</button></a>
+            {% endif %}
+            <h1><a href="/">Rubin (Django) Blog</a></h1>
+        </div>  
+        <div class="content container">
             <div class="row">
                 <div class="col-md-10">
-                    {% block content %}
-                    {% endblock %}
+                {% block content %}
+                {% endblock %}
                 </div>
             </div>
-        </main>
+        </div>
     </body>     
 </html>
