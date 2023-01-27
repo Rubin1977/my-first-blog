@@ -1,5 +1,5 @@
 .page-header {
-    background-color: #739b99be;
+    background-color: #797181be;
     margin-top: 20;
     margin-bottom: 30px;
     border: 3px solid rgb(2, 15, 59);
@@ -10,8 +10,8 @@
 .page-header h1 a,
 .page-header h1 a:visited,
 .page-header h1 a:active {
-    color: #d84141;
-    font-size: 55pt;
+    color: #081b6d;
+    font-size: 50pt;
     text-decoration: unset;
     margin: 0px;
     padding: 4px;
@@ -22,7 +22,7 @@ h2,
 h3,
 h4 {
     color: #5c0d58;
-    font-family: 'Lobster'; 
+    font-family: 'serif'; 
     font-stretch: 50%;
 }
 article{
@@ -57,13 +57,14 @@ body{
 .top-menu:visited {
     color: #ffffff; 
     float: right;
-    font-size: 26pt;
+    font-size: 24pt;
     margin-right: 20px;
 }
 
 .top-menu:hover {
     color: #1e0b66;
 }
+
 .post {
     color: #260544d5;
     margin-left: 35px;
@@ -85,14 +86,15 @@ body{
 
 .btn-secondary,
 .btn-secondary:visited {
-    color: #cacad4;
-    background: rgb(6, 97, 201);
+    color: #dedee9;
+    background: #033166;
     border-color: #db590e;
+    float: right;
 }
 
 .btn-secondary:hover {
-    color: #2a1281;
-    background-color: #aeb8b6;
+    color: #1d0c5e;
+    background-color: #cfdbd9;
 }
 
 .comment {
