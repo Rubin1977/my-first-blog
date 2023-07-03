@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Kontaktný formulár</title>
+<head>
+<body>
+    <p>Môžete ma kontaktovať pomocou nižšie uvedeného formulára:</p>
+
+    {% if hlaska %}
+        <p>{{ hlaska }}</p>
+    {% endif %}
+
+    <form method='POST'>
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Vaše meno</td>
+                <td><input name="meno" type="text" /></td>
+            <tr/>
+            <tr>
+                <td>Aktuálny rok</td>
+                <td><input name="rok" type="number" /></td>
+            <tr/>
+        <table>
+            <textarea name="správa"></textarea><br />
+            <input type="submit" value="Odoslať správu" />
+    </form>
+</body>
+</html>

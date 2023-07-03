@@ -6,6 +6,8 @@ from .forms import PostForm, CommentForm
 from django.shortcuts import redirect
 from .models import Post, Comment
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
+from datetime import datetime
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -79,6 +81,39 @@ def comment_remove(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.delete()
     return redirect('post_detail', pk=comment.post.pk)
+
+def send_email(request):
+    hlaska = ''
+    if request.method == 'POST':
+        meno = request.POST.get('meno')
+        email = request.POST.get('email')
+        sprava = request.POST.get('správa')
+        rok = request.POST.get('rok')
+    
+        if meno and email and sprava and rok == str(datetime.now().year):
+            adresa = 'ruzbacky@yahoo.com'
+            predmet = 'Nová správa z mailformu'
+            sprava_emailu = f'''
+                <html>
+                    <body>
+                        <h2>Nová správa z mailformu</h2>
+                        <p>Od: {meno}</p>
+                        <p>Email: {email}</p>
+                        <p>Správa: {sprava}</p>
+                    </body>
+                </html>
+            '''
+    
+            try:
+                send_mail(predmet, sprava_emailu, email, [adresa], html_message=sprava_emailu)
+                hlaska = 'Email bol úspešne odoslaný, čoskoro Vám odpovieme.'
+            except:
+                hlaska = 'Email sa nepodarili odoslať. Skontrolujte adresu!'
+        else:
+            hlaska = 'Formulár nie je správne vyplnený!'
+            
+    return render(request, 'template.html', {'hlaska': hlaska})
+                
 
 # Create your views here.
 
