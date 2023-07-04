@@ -112,7 +112,7 @@ def send_email(request):
         else:
             hlaska = 'Formulár nie je správne vyplnený!'
             
-    return render(request, 'web_formular.html', {'hlaska': hlaska})
+    return render(request, 'web_formulár.html', {'hlaska': hlaska})
                 
 
 # Create your views here.
