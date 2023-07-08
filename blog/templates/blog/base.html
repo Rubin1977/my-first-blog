@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Rubin (Django) Blog</title>
+        <title>Ružbacký Životopis</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
@@ -12,11 +12,11 @@
             {% if user.is_authenticated %}
                 <a href="{% url 'post_new' %}" class="top-menu" data-toggle="tooltip" data-placement="left" title="New Post">{% include './icons/plus-square.svg' %}</a>
                 <a href="{% url 'post_draft_list' %}" class="top-menu" data-toggle="tooltip" data-placement="left" title="Post draft list">{% include './icons/pencil-square.svg' %}</a>
-                <p class="top-menu">Hello {{ user.username }} <small><a href="{% url 'logout' %}">Odhlásenie</button></a></small></p> 
+                <p class="top-menu">Hello {{ user.username }} <small><a href="{% url 'logout' %}">Log out</button></a></small></p> 
             {% else %} 
-                <a class="btn btn-primary " href="{% url 'login' %}" class="top-menu" data-toggle="tooltip" data-placement="left" title="Prihlásenie">Prihlásenie</button></a>
+                <a class="btn btn-primary " href="{% url 'login' %}" class="top-menu" data-toggle="tooltip" data-placement="right" title="Prihlásenie">Log in</button></a>
             {% endif %}
-            <h1><a href="/">Rubin (Django) Blog</a></h1>
+            <h1 style="text-align: center;"><a href="/">Rastislav Ružbacký - Životopis</a></h1>
         </div>  
         <div class="content container">
             <div class="row">
