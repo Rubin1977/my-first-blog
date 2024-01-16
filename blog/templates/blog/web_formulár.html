@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Kontaktný formulár</title>
-<head>
+</head>
 <body>
     <p>Môžete ma kontaktovať pomocou nižšie uvedeného formulára:</p>
 
@@ -11,7 +11,7 @@
         <p>{{ hlaska }}</p>
     {% endif %}
 
-    <form method='POST'>
+    <form method="POST">
         {% csrf_token %}
         <table>
             <tr>
@@ -22,8 +22,8 @@
                 <td>Aktuálny rok</td>
                 <td><input name="rok" type="number" /></td>
             </tr>
-        <table>
-            <textarea name="správa"></textarea><b/r>
+        </table>
+            <textarea name="správa"></textarea><br>
             <input type="submit" value="Odoslať správu" />
     </form>
 </body>
