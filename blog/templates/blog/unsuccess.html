@@ -1,0 +1,16 @@
+{% extends 'zivotopis/base.html' %}
+    
+{% block content %}
+  <h1>Email sa nepodarilo odoslať. <br>Skontrolujte emailovú adresu.</h1>
+  <button id="backButton">Návrat do kontaktného formulára</button>
+  <button id="backtohomeButton">Návrat na úvodnú stránku</button>
+
+  <script>
+    document.getElementById("backButton").addEventListener("click", function() {
+      window.location.href = "{% url 'send_email' %}";
+    });
+    document.getElementById("backtohomeButton").addEventListener("click", function() {
+      window.location.href = "{% url 'post_list' %}";
+    });
+  </script>
+{% endblock %}

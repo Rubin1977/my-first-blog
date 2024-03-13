@@ -1,30 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Kontaktný formulár</title>
-</head>
-<body>
-    <p>Môžete ma kontaktovať pomocou nižšie uvedeného formulára:</p>
+{% extends "zivotopis/base.html" %}
 
-    {% if hlaska %}
-        <p>{{ hlaska }}</p>
-    {% endif %}
-
-    <form method="POST">
+{% block content %}
+<div class="row">
+    <div class="contact-info-frame">
+        <p>Môžete ma kontaktovať pomocou nižšie uvedeného formulára: </p>
+    </div><br>   
+</div>    
+    <form method="post" action="{% url 'send_email' %}">   
         {% csrf_token %}
-        <table>
-            <tr>
-                <td>Vaše meno</td>
-                <td><input name="meno" type="text" /></td>
-            </tr>
-            <tr>
-                <td>Aktuálny rok</td>
-                <td><input name="rok" type="number" /></td>
-            </tr>
-        </table>
-            <textarea name="správa"></textarea><br>
-            <input type="submit" value="Odoslať správu" />
+        <label for="{{ form.sender_name.id_for_label }}"> {{ form.sender_name.label }} </label>
+        <br>
+        {{ form.sender_name }}
+        <br>
+        <label for="{{ form.sender_email.id_for_label }}"> {{ form.sender_email.label }} </label>
+        <br>
+        {{ form.sender_email }}
+        <br>
+        <label for="{{ form.subject.id_for_label }}"> {{ form.subject.label }} </label>
+        <br>
+        {{ form.subject }}
+        <br>
+        <label for="{{ form.message.id_for_label }}"> {{ form.message.label }} </label>
+        <br>
+        {{ form.message }}
+        <button class="btn btn-secondary" type="submit">Odoslať</button>
+        <br>
     </form>
-</body>
-</html>
+    <div style="padding-bottom: 20px;"></div>
+{% endblock %}

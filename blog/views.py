@@ -84,38 +84,43 @@ def comment_remove(request, pk):
     comment.delete()
     return redirect('post_detail', pk=comment.post.pk)
 
+
+def success_view(request):
+    return render(request, 'blog/success.html')
+
+def unsuccess_view(request):
+    return render(request, 'blog/unsuccess.html')
+
 def send_email(request):
-    hlaska = ''
     if request.method == 'POST':
-        meno = request.POST.get('meno')
-        email = request.POST.get('email')
-        sprava = request.POST.get('správa')
-        rok = request.POST.get('rok')
-    
-        if meno and email and sprava and rok == str(datetime.now().year):
+        form = EmailForm(request.POST)
+        if form.is_valid():
+            form.save()
             adresa = 'ruzbacky@yahoo.com'
-            predmet = 'Nová správa z mailformu'
-            sprava_emailu = f'''
-                <html>
-                    <body>
-                        <h2>Nová správa z mailformu</h2>
-                        <p>Od: {meno}</p>
-                        <p>Email: {email}</p>
-                        <p>Správa: {sprava}</p>
-                    </body>
-                </html>
-            '''
-    
-            try:
-                send_mail(predmet, sprava_emailu, email, [adresa], html_message=sprava_emailu)
-                hlaska = 'Email bol úspešne odoslaný, čoskoro Vám odpovieme.'
-            except:
-                hlaska = 'Email sa nepodarili odoslať. Skontrolujte adresu!'
+            predmet = 'Nová zpráva z blog formulára!'
+            meno = 'Meno odosielateľa: ' + form.cleaned_data['sender_name']
+            sprava = '\nSpráva: ' + form.cleaned_data['message'] 
+            hlavicka = '\nJeho emailová adresa:\n' + form.cleaned_data['sender_email']
+            hlavicka += "\nMIME-Version: 1.0\nContent-Type: text/html; charset=\"utf-8\"\n"
+            predmet_odosielatela = 'Predmet: ' + form.cleaned_data['subject']
+            #hlavicka = format_html(
+                #"<p>{}</p><p>MIME-Version: 1.0</p><p>Content-Type: text/html; charset=\"utf-8\"</p>",
+                #meno + "<br>" + predmet_odosielatela + "<br>" + sprava
+            #)    
+            uspech = send_mail (predmet, 
+                               form.cleaned_data['subject'], 
+                               form.cleaned_data['sender_email'], 
+                               [adresa], 
+                               fail_silently=False, 
+                               html_message=meno + hlavicka + predmet_odosielatela + sprava
+                               )
+            if uspech:
+                return redirect('success_view')
         else:
-            hlaska = 'Formulár nie je správne vyplnený!'
-            
-    return render(request, 'web_formulár.html', {'hlaska': hlaska})
-                
+            return redirect('unsuccess_view') 
+    else:
+        form = EmailForm()    
+    return render(request, 'registration/send_email.html', {'form': form})               
 
 # Create your views here.
 

@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+    
+
+{% block content %}
+  <h1>Email bol úspešne odoslaný!</h1>
+  <button id="backtohomeButton">Návrat na úvodnú stránku</button>
+  <button id="backtoemailButton" style="color: red">Návrat do kontaktného formulára</button>
+
+  <script>
+    document.getElementById("backtohomeButton").addEventListener("click", function() {
+      window.location.href = "{% url 'post_list' %}";
+    });
+    document.getElementById("backtoemailButton").addEventListener("click", function() {
+      window.location.href = "{% url 'send_email' %}";
+    });
+  </script>
+{% endblock %}
