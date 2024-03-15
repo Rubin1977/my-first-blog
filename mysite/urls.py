@@ -25,6 +25,9 @@ urlpatterns = [
     path('accounts/login/', views.LoginView.as_view(), name='login'),
     path('accounts/logout/', views.LogoutView.as_view(next_page='/'), name='logout'),
     path('', include('blog.urls')),
+    path('email/', views.send_email, name='send_email'),
+    path('success/', views.success_view, name='success_view'),  
+    path('unsuccess/', views.unsuccess_view, name='unsuccess_view'), 
 ]
 
 if settings.DEBUG:  # new
